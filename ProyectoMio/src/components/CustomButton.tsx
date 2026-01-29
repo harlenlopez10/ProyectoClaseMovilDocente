@@ -1,10 +1,22 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
-export default function CustomButton (){
+interface CustomButtonProps {
+    title: string;
+    onClick: () => void;
+}
+
+export default function CustomButton ({
+    title,
+    onClick
+}: CustomButtonProps){
 
     return(
-        <View>
-            <Text>Soy un Boton</Text>
-        </View>
+        <TouchableOpacity
+        onPress={onClick}
+        >
+            <Text>
+                {title}
+            </Text>
+        </TouchableOpacity>
     );
 }
