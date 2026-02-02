@@ -15,10 +15,19 @@ const handleOnLogout = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Open up App</Text>
-      <StatusBar style="auto" />
-      <CustomButton title={'Login'} onClick={handleOnLogin}/>
-      <CustomButton title={'Salir'} onClick={handleOnLogout}/>
+      <View style={styles.card}>
+        <Text>Open up App</Text>
+        <StatusBar style="auto" />
+        <View style={styles.buttonsWrapper}>
+          <CustomButton 
+              title={'Login'} 
+              onClick={handleOnLogin} />
+          <CustomButton 
+              title={'Salir'}
+              onClick={handleOnLogout}
+              variant={'secondary'} />
+        </View>
+      </View>
     </View>
   );
 }
@@ -27,8 +36,20 @@ const handleOnLogout = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  card: {
+    width: "80%",
+    height: "80%",
+    borderRadius:15,
+    backgroundColor: '#46639e',
+  },
+  buttonsWrapper: {
+    backgroundColor: "green",
+    marginTop: 15,
+    height: "30%",
+    alignItems: "center",
+    justifyContent: "space-around",
   },
 });
